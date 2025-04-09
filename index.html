@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>EDA Checklist</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+		rel="stylesheet">
+	<style>
+		:root {
+			--primary-color: #ffffff;
+			--accent-color: #258eff;
+			--bg-color: #1e1e1e;
+			--text-color: #f0f0f0;
+			--section-bg: #2a2a2a;
+			--hover-color: #4a4a4a;
+		}
+
+		body {
+			font-family: 'Inter', sans-serif;
+			line-height: 1.6;
+			margin: 0;
+			padding: 0;
+			background-color: var(--bg-color);
+			color: var(--text-color);
+		}
+
+		.cover-image {
+			width: 100%;
+			height: 150px;
+			object-fit: cover;
+			object-position: center center;
+			margin-bottom: 10px;
+		}
+
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 10px 20px;
+		}
+
+		h1 {
+			font-family: 'Poppins', sans-serif;
+			font-size: 3rem;
+			font-weight: 700;
+			margin-bottom: 0;
+			text-align: left;
+			letter-spacing: -0.5px;
+		}
+
+		.subtitle {
+			font-family: 'Poppins', sans-serif;
+			font-size: 1.0rem;
+			font-weight: 100;
+			margin-top: 5px;
+			margin-bottom: 20px;
+			text-align: left;
+			color: var(--hover-color);
+		}
+
+		h2 {
+			font-family: 'Poppins', sans-serif;
+			font-size: 1.5rem;
+			font-weight: 500;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			display: flex;
+			align-items: center;
+		}
+
+		h3 {
+			font-family: 'Poppins', sans-serif;
+			font-size: 1.2rem;
+			font-weight: 500;
+			margin-top: 10px;
+			margin-bottom: 5px;
+		}
+
+		.section-header {
+			display: flex;
+			align-items: center;
+			margin-bottom: 5px;
+			padding: 8px 10px;
+			border-radius: 8px;
+			background-color: var(--section-bg);
+			cursor: pointer;
+			transition: background-color 0.2s ease;
+		}
+
+		.section-header:hover {
+			background-color: var(--hover-color);
+		}
+
+		.section-content {
+			margin-left: 25px;
+			overflow: hidden;
+			transition: max-height 0.3s ease, opacity 0.3s ease;
+			opacity: 0;
+			padding-left: 15px;
+			border-left: 2px solid var(--primary-color);
+			margin-bottom: 10px;
+		}
+
+		.section-hidden {
+			max-height: 0;
+		}
+
+		.section-visible {
+			max-height: 1000px;
+			opacity: 1;
+		}
+
+		.toggle-icon {
+			display: inline-block;
+			width: 20px;
+			margin-right: 10px;
+			transition: transform 0.3s ease;
+			color: var(--primary-color);
+		}
+
+		.rotated {
+			transform: rotate(90deg);
+		}
+
+		.diamond {
+			color: var(--primary-color);
+			margin-right: 10px;
+		}
+
+		.checkmark {
+			color: var(--accent-color);
+			font-size: 1.0rem;
+			margin-right: 10px;
+		}
+
+		ul {
+			list-style-type: none;
+			padding-left: 0;
+		}
+
+		li {
+			margin-bottom: 12px;
+			display: flex;
+			align-items: flex-start;
+		}
+
+		input[type="checkbox"] {
+			margin-right: 10px;
+			margin-top: 5px;
+			cursor: pointer;
+			width: 18px;
+			height: 18px;
+			accent-color: var(--accent-color);
+		}
+
+		input[type="checkbox"]:hover {
+			transform: scale(1.1);
+		}
+
+		code {
+			background-color: #333;
+			padding: 2px 5px;
+			border-radius: 3px;
+			font-family: 'Fira Code', monospace;
+			font-size: 0.9em;
+		}
+
+		@media (max-width: 768px) {
+			.container {
+				padding: 10px;
+			}
+
+			h1 {
+				font-size: 2.2rem;
+			}
+
+			.subtitle {
+				font-size: 1.0rem;
+			}
+
+			h2 {
+				font-size: 1.3rem;
+			}
+
+			.section-content {
+				margin-left: 15px;
+			}
+
+			.cover-image {
+				height: 150px;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<img src="papers.co-aq61-art-work-pattern-illustration-graffiti-36-3840x2400-4k-wallpaper.jpg" alt="Cover Image"
+		class="cover-image">
+
+	<div class="container">
+		<h1>Exploratory Data Analysis (EDA)</h1>
+		<h3>EDA Checklist</h3>
+		<div class="subtitle"><span class="checkmark">✅</span>Ultimate EDA Checklist</div>
+
+		<div>
+			<div class="section-header">
+				<span class="toggle-icon">▶</span>
+				<h2><span class="diamond">🔹</span> 1. Context & Objective</h2>
+			</div>
+			<div class="section-content section-hidden">
+				<ul>
+					<li><input type="checkbox"> Understand the business/domain problem</li>
+					<li><input type="checkbox"> Identify target variable (if supervised task)</li>
+					<li><input type="checkbox"> Determine type of ML problem (classification, regression, clustering,
+						etc.)</li>
+				</ul>
+			</div>
+
+			<div class="section-header">
+				<span class="toggle-icon">▶</span>
+				<h2><span class="diamond">🔹</span> 2. Data Loading & Setup</h2>
+			</div>
+			<div class="section-content section-hidden">
+				<ul>
+					<li><input type="checkbox"> Load data correctly (<code>pd.read_csv()</code>, etc.)</li>
+					<li><input type="checkbox"> Check shape (<code>df.shape</code>)</li>
+					<li><input type="checkbox"> Preview data (<code>df.head()</code>, <code>df.sample()</code>)</li>
+					<li><input type="checkbox"> Check column names and duplicates</li>
+					<li><input type="checkbox"> Save a copy of raw data for backup</li>
+				</ul>
+			</div>
+
+			<div class="section-header">
+				<span class="toggle-icon">▶</span>
+				<h2><span class="diamond">🔹</span> 3. Data Types & Structure</h2>
+			</div>
+			<div class="section-content section-hidden">
+				<ul>
+					<li><input type="checkbox"> Check <code>df.dtypes</code></li>
+					<li><input type="checkbox"> Identify categorical, numerical, datetime, and text features</li>
+					<li><input type="checkbox"> Convert types as needed (<code>to_datetime()</code>,
+						<code>astype()</code>)
+					</li>
+					<li><input type="checkbox"> Detect and remove ID-like or irrelevant columns</li>
+				</ul>
+			</div>
+
+			<div class="section-header">
+				<span class="toggle-icon">▶</span>
+				<h2><span class="diamond">🔹</span> 4. Missing Values</h2>
+			</div>
+			<div class="section-content section-hidden">
+				<ul>
+					<li><input type="checkbox"> Use <code>df.isnull().sum()</code> and <code>% missing</code></li>
+					<li><input type="checkbox"> Visualize missing values (<code>sns.heatmap</code>,
+						<code>missingno.matrix</code>)
+					</li>
+					<li><input type="checkbox"> Determine strategy:</li>
+					<li style="margin-left: 20px;"><input type="checkbox"> Drop rows/columns (if valid)</li>
+					<li style="margin-left: 20px;"><input type="checkbox"> Impute (mean/median/mode/forward fill)</li>
+					<li style="margin-left: 20px;"><input type="checkbox"> Advanced imputation (KNN, MICE, model-based)
+					</li>
+				</ul>
+			</div>
+
+			<div class="section-header">
+				<span class="toggle-icon">▶</span>
+				<h2><span class="diamond">🔹</span> 5. Univariate Analysis</h2>
+			</div>
+			<div class="section-content section-hidden">
+				<h3>Numerical Features</h3>
+				<ul>
+					<li><input type="checkbox"> Histograms</li>
+					<li><input type="checkbox"> Boxplots</li>
+					<li><input type="checkbox"> Summary stats (<code>df.describe()</code>)</li>
+				</ul>
+
+				<h3>Categorical Features</h3>
+				<ul>
+					<li><input type="checkbox"> Bar plots / Count plots</li>
+					<li><input type="checkbox"> <code>value_counts()</code> for cardinality & imbalance</li>
+				</ul>
+
+				<h3>Target Variable</h3>
+				<ul>
+					<li><input type="checkbox"> Distribution (histogram / countplot)</li>
+					<li><input type="checkbox"> Class balance (classification)</li>
+					<li><input type="checkbox"> Range and skewness (regression)</li>
+				</ul>
+			</div>
+
+			<div class="section-header">
+				<span class="toggle-icon">▶</span>
+				<h2><span class="diamond">🔹</span> 6. Bivariate/Multivariate Analysis</h2>
+			</div>
+			<div class="section-content section-hidden">
+				<ul>
+					<li><input type="checkbox"> Correlation matrix (numerical-numerical)</li>
+					<li><input type="checkbox"> Scatter plots / pairplots</li>
+					<li><input type="checkbox"> Boxplots for category vs. numeric</li>
+					<li><input type="checkbox"> Crosstabs or grouped bar charts (cat-cat)</li>
+					<li><input type="checkbox"> Group-based summary stats (<code>groupby()</code>)</li>
+				</ul>
+			</div>
+
+			<div class="section-header">
+				<span class="toggle-icon">▶</span>
+				<h2><span class="diamond">🔹</span> 7. Outlier Detection</h2>
+			</div>
+			<div class="section-content section-hidden">
+				<ul>
+					<li><input type="checkbox"> Boxplots for outlier visualization</li>
+					<li><input type="checkbox"> IQR method or Z-score method</li>
+					<li><input type="checkbox"> Decide to:</li>
+					<li style="margin-left: 20px;"><input type="checkbox"> Cap</li>
+					<li style="margin-left: 20px;"><input type="checkbox"> Remove</li>
+					<li style="margin-left: 20px;"><input type="checkbox"> Leave as is</li>
+					<li style="margin-left: 20px;"><input type="checkbox"> Use log/box-cox transformation</li>
+				</ul>
+			</div>
+
+			<div class="section-header">
+				<span class="toggle-icon">▶</span>
+				<h2><span class="diamond">🔹</span> 8. Feature Engineering</h2>
+			</div>
+			<div class="section-content section-hidden">
+				<ul>
+					<li><input type="checkbox"> Create derived columns (ratios, interactions)</li>
+					<li><input type="checkbox"> Extract date parts (Year, Month, Day)</li>
+					<li><input type="checkbox"> Create bins (e.g., age groups)</li>
+					<li><input type="checkbox"> Group rare categories</li>
+					<li><input type="checkbox"> Aggregate features (grouped means, etc.)</li>
+				</ul>
+			</div>
+
+			<div class="section-header">
+				<span class="toggle-icon">▶</span>
+				<h2><span class="diamond">🔹</span> 9. Encoding Categorical Features</h2>
+			</div>
+			<div class="section-content section-hidden">
+				<ul>
+					<li><input type="checkbox"> Label encoding (if ordinal)</li>
+					<li><input type="checkbox"> One-hot encoding (if nominal)</li>
+					<li><input type="checkbox"> Frequency/Count encoding</li>
+					<li><input type="checkbox"> Target/Mean encoding (with care to avoid leakage)</li>
+				</ul>
+			</div>
+
+			<div class="section-header">
+				<span class="toggle-icon">▶</span>
+				<h2><span class="diamond">🔹</span> 10. Data Scaling</h2>
+			</div>
+			<div class="section-content section-hidden">
+				<ul>
+					<li><input type="checkbox"> Normalize or scale numeric features (if needed):</li>
+					<li style="margin-left: 20px;"><input type="checkbox"> StandardScaler (mean = 0, std = 1)</li>
+					<li style="margin-left: 20px;"><input type="checkbox"> MinMaxScaler (0 to 1)</li>
+					<li style="margin-left: 20px;"><input type="checkbox"> RobustScaler (for outliers)</li>
+					<li><input type="checkbox"> Only scale after encoding & splitting (on train/test separately)</li>
+				</ul>
+			</div>
+
+			<div class="section-header">
+				<span class="toggle-icon">▶</span>
+				<h2><span class="diamond">🔹</span> 11. Feature Selection (Optional Pre-modeling)</h2>
+			</div>
+			<div class="section-content section-hidden">
+				<ul>
+					<li><input type="checkbox"> Drop low-variance features</li>
+					<li><input type="checkbox"> Drop highly correlated features</li>
+					<li><input type="checkbox"> Use mutual information / ANOVA F-test</li>
+					<li><input type="checkbox"> Use RFE / model-based methods (if planning ahead)</li>
+				</ul>
+			</div>
+
+			<div class="section-header">
+				<span class="toggle-icon">▶</span>
+				<h2><span class="diamond">🔹</span> 12. Visual Reporting</h2>
+			</div>
+			<div class="section-content section-hidden">
+				<ul>
+					<li><input type="checkbox"> Summarize important insights visually</li>
+					<li><input type="checkbox"> Save figures of important plots</li>
+					<li><input type="checkbox"> Optional: use profiling tools: <code>pandas-profiling</code>,
+						<code>SweetViz</code>, <code>D-Tale</code>, <code>Autoviz</code>
+					</li>
+				</ul>
+			</div>
+
+			<div class="section-header">
+				<span class="toggle-icon">▶</span>
+				<h2><span class="diamond">🔹</span> 13. Documentation & Summary</h2>
+			</div>
+			<div class="section-content section-hidden">
+				<ul>
+					<li><input type="checkbox"> Document key insights from EDA</li>
+					<li><input type="checkbox"> Highlight data quality issues</li>
+					<li><input type="checkbox"> Note feature transformations</li>
+					<li><input type="checkbox"> Make modeling recommendations</li>
+				</ul>
+			</div>
+
+			<div class="section-header">
+				<span class="toggle-icon">▶</span>
+				<h2><span class="diamond">🔹</span> 14. Export Clean Data</h2>
+			</div>
+			<div class="section-content section-hidden">
+				<ul>
+					<li><input type="checkbox"> Save cleaned & transformed dataset (<code>to_csv</code>)</li>
+					<li><input type="checkbox"> Optionally split into train/test before modeling</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const headers = document.querySelectorAll('.section-header');
+
+			headers.forEach(header => {
+				header.addEventListener('click', function () {
+					const content = this.nextElementSibling;
+					const icon = this.querySelector('.toggle-icon');
+
+					if (content.classList.contains('section-hidden')) {
+						content.classList.remove('section-hidden');
+						content.classList.add('section-visible');
+						icon.classList.add('rotated');
+					} else {
+						content.classList.add('section-hidden');
+						content.classList.remove('section-visible');
+						icon.classList.remove('rotated');
+					}
+				});
+			});
+		});
+	</script>
+</body>
+
+</html>

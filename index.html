@@ -1,444 +1,434 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="light">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>EDA Checklist</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
-		rel="stylesheet">
-	<style>
-		:root {
-			--primary-color: #ffffff;
-			--accent-color: #258eff;
-			--bg-color: #1e1e1e;
-			--text-color: #f0f0f0;
-			--section-bg: #2a2a2a;
-			--hover-color: #4a4a4a;
-		}
-
-		body {
-			font-family: 'Inter', sans-serif;
-			line-height: 1.6;
-			margin: 0;
-			padding: 0;
-			background-color: var(--bg-color);
-			color: var(--text-color);
-		}
-
-		.cover-image {
-			width: 100%;
-			height: 150px;
-			object-fit: cover;
-			object-position: center center;
-			margin-bottom: 10px;
-		}
-
-		.container {
-			max-width: 800px;
-			margin: 0 auto;
-			padding: 10px 20px;
-		}
-
-		h1 {
-			font-family: 'Poppins', sans-serif;
-			font-size: 3rem;
-			font-weight: 700;
-			margin-bottom: 0;
-			text-align: left;
-			letter-spacing: -0.5px;
-		}
-
-		.subtitle {
-			font-family: 'Poppins', sans-serif;
-			font-size: 1.0rem;
-			font-weight: 100;
-			margin-top: 5px;
-			margin-bottom: 20px;
-			text-align: left;
-			color: var(--hover-color);
-		}
-
-		h2 {
-			font-family: 'Poppins', sans-serif;
-			font-size: 1.5rem;
-			font-weight: 500;
-			margin-top: 10px;
-			margin-bottom: 10px;
-			display: flex;
-			align-items: center;
-		}
-
-		h3 {
-			font-family: 'Poppins', sans-serif;
-			font-size: 1.2rem;
-			font-weight: 500;
-			margin-top: 10px;
-			margin-bottom: 5px;
-		}
-
-		.section-header {
-			display: flex;
-			align-items: center;
-			margin-bottom: 5px;
-			padding: 8px 10px;
-			border-radius: 8px;
-			background-color: var(--section-bg);
-			cursor: pointer;
-			transition: background-color 0.2s ease;
-		}
-
-		.section-header:hover {
-			background-color: var(--hover-color);
-		}
-
-		.section-content {
-			margin-left: 25px;
-			overflow: hidden;
-			transition: max-height 0.3s ease, opacity 0.3s ease;
-			opacity: 0;
-			padding-left: 15px;
-			border-left: 2px solid var(--primary-color);
-			margin-bottom: 10px;
-		}
-
-		.section-hidden {
-			max-height: 0;
-		}
-
-		.section-visible {
-			max-height: 1000px;
-			opacity: 1;
-		}
-
-		.toggle-icon {
-			display: inline-block;
-			width: 20px;
-			margin-right: 10px;
-			transition: transform 0.3s ease;
-			color: var(--primary-color);
-		}
-
-		.rotated {
-			transform: rotate(90deg);
-		}
-
-		.diamond {
-			color: var(--primary-color);
-			margin-right: 10px;
-		}
-
-		.checkmark {
-			color: var(--accent-color);
-			font-size: 1.0rem;
-			margin-right: 10px;
-		}
-
-		ul {
-			list-style-type: none;
-			padding-left: 0;
-		}
-
-		li {
-			margin-bottom: 12px;
-			display: flex;
-			align-items: flex-start;
-		}
-
-		input[type="checkbox"] {
-			margin-right: 10px;
-			margin-top: 5px;
-			cursor: pointer;
-			width: 18px;
-			height: 18px;
-			accent-color: var(--accent-color);
-		}
-
-		input[type="checkbox"]:hover {
-			transform: scale(1.1);
-		}
-
-		code {
-			background-color: #333;
-			padding: 2px 5px;
-			border-radius: 3px;
-			font-family: 'Fira Code', monospace;
-			font-size: 0.9em;
-		}
-
-		@media (max-width: 768px) {
-			.container {
-				padding: 10px;
-			}
-
-			h1 {
-				font-size: 2.2rem;
-			}
-
-			.subtitle {
-				font-size: 1.0rem;
-			}
-
-			h2 {
-				font-size: 1.3rem;
-			}
-
-			.section-content {
-				margin-left: 15px;
-			}
-
-			.cover-image {
-				height: 150px;
-			}
-		}
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building an End-to-End Machine Learning Model: A Comprehensive Guide</title>
+    <style>
+        /* Theme variables */
+        :root {
+            /* Light theme (default) */
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --bg-color: #ffffff;
+            --light-bg: #f8f9fa;
+            --border-radius: 8px;
+        }
+        
+        /* Dark theme */
+        [data-theme="dark"] {
+            --primary-color: #4fa3e0;
+            --secondary-color: #34495e;
+            --accent-color: #e74c3c;
+            --text-color: #f0f0f0;
+            --bg-color: #1a1a1a;
+            --light-bg: #2a2a2a;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin: 30px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            color: var(--secondary-color);
+            margin: 25px 0 15px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+        }
+        
+        ul, ol {
+            margin: 20px 0;
+            padding-left: 25px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        strong {
+            color: var(--accent-color);
+        }
+        
+        hr {
+            margin: 40px 0;
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+        }
+        
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: var(--light-bg);
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        
+        pre {
+            background-color: var(--light-bg);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        
+        .conclusion {
+            background-color: var(--light-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary-color);
+            margin: 30px 0;
+        }
+        
+        .divider {
+            text-align: center;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin: 30px 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            margin: 10px 0;
+        }
+        
+        .btn:hover {
+            background-color: #c0392b;
+        }
+        
+        .nav-buttons {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .floating-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 10px 15px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .floating-btn:hover {
+            background-color: #c0392b;
+        }
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transition: transform 0.3s;
+        }
+        
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            h3 {
+                font-size: 1.2rem;
+            }
+            
+            body {
+                padding: 15px;
+            }
+            
+            .floating-btn {
+                position: static;
+                display: block;
+                margin: 15px auto 0;
+                width: fit-content;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            header {
+                padding: 30px 15px;
+            }
+            
+            .theme-toggle {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
-	<img src="papers.co-aq61-art-work-pattern-illustration-graffiti-36-3840x2400-4k-wallpaper.jpg" alt="Cover Image"
-		class="cover-image">
+    <header>
+        <h1>Building an End-to-End Machine Learning Model</h1>
+        <p>A Comprehensive Guide for Students</p>
+        <a href="ead Checkpoints.html" class="floating-btn">EAD Checkpoints</a>
+    </header>
 
-	<div class="container">
-		<h1>Exploratory Data Analysis (EDA)</h1>
-		<h3>EDA Checklist</h3>
-		<div class="subtitle"><span class="checkmark">✅</span>Ultimate EDA Checklist</div>
+    <p>As a student beginning your journey in data science, the process of transforming a raw dataset into a functional machine learning model can seem overwhelming. This guide provides a detailed, step-by-step approach to navigating this journey, emphasizing foundational concepts, practical implementation, and iterative refinement. By following these steps, you will gain hands-on experience in problem framing, data preparation, model development, and evaluation, all while building confidence in your ability to tackle real-world machine learning challenges.</p>
 
-		<div>
-			<div class="section-header">
-				<span class="toggle-icon">▶</span>
-				<h2><span class="diamond">🔹</span> 1. Context & Objective</h2>
-			</div>
-			<div class="section-content section-hidden">
-				<ul>
-					<li><input type="checkbox"> Understand the business/domain problem</li>
-					<li><input type="checkbox"> Identify target variable (if supervised task)</li>
-					<li><input type="checkbox"> Determine type of ML problem (classification, regression, clustering,
-						etc.)</li>
-				</ul>
-			</div>
+    <hr>
 
-			<div class="section-header">
-				<span class="toggle-icon">▶</span>
-				<h2><span class="diamond">🔹</span> 2. Data Loading & Setup</h2>
-			</div>
-			<div class="section-content section-hidden">
-				<ul>
-					<li><input type="checkbox"> Load data correctly (<code>pd.read_csv()</code>, etc.)</li>
-					<li><input type="checkbox"> Check shape (<code>df.shape</code>)</li>
-					<li><input type="checkbox"> Preview data (<code>df.head()</code>, <code>df.sample()</code>)</li>
-					<li><input type="checkbox"> Check column names and duplicates</li>
-					<li><input type="checkbox"> Save a copy of raw data for backup</li>
-				</ul>
-			</div>
+    <h2>1. Problem Understanding and Objective Definition</h2>
+    <p>Before touching the dataset, articulate the problem you aim to solve. Machine learning models are tools designed to address specific objectives, such as predicting customer churn, classifying images, or forecasting sales.</p>
+    
+    <h3>1.1 Clarify the Problem Scope</h3>
+    <ul>
+        <li><strong>Question to Ask</strong>: What is the model's purpose? For example, are you predicting a numerical value (regression) or categorizing data (classification)?</li>
+        <li><strong>Success Metrics</strong>: Define how you will measure performance. Common metrics include accuracy (for classification) and mean squared error (for regression).</li>
+        <li><strong>Stakeholder Alignment</strong>: If this were a real-world project, you would consult stakeholders to ensure the model aligns with business goals. For academic purposes, simulate this by clearly documenting your assumptions.</li>
+    </ul>
+    
+    <h3>1.2 Dataset Familiarization</h3>
+    <ul>
+        <li><strong>Data Source</strong>: Note where the data came from (e.g., CSV files, APIs, surveys) and any inherent biases or limitations.</li>
+        <li><strong>Initial Exploration</strong>: Use tools like Pandas in Python to load and inspect the dataset. Commands like <code>df.head()</code> and <code>df.describe()</code> provide summaries of the data's structure, features, and basic statistics.</li>
+    </ul>
 
-			<div class="section-header">
-				<span class="toggle-icon">▶</span>
-				<h2><span class="diamond">🔹</span> 3. Data Types & Structure</h2>
-			</div>
-			<div class="section-content section-hidden">
-				<ul>
-					<li><input type="checkbox"> Check <code>df.dtypes</code></li>
-					<li><input type="checkbox"> Identify categorical, numerical, datetime, and text features</li>
-					<li><input type="checkbox"> Convert types as needed (<code>to_datetime()</code>,
-						<code>astype()</code>)
-					</li>
-					<li><input type="checkbox"> Detect and remove ID-like or irrelevant columns</li>
-				</ul>
-			</div>
+    <hr>
 
-			<div class="section-header">
-				<span class="toggle-icon">▶</span>
-				<h2><span class="diamond">🔹</span> 4. Missing Values</h2>
-			</div>
-			<div class="section-content section-hidden">
-				<ul>
-					<li><input type="checkbox"> Use <code>df.isnull().sum()</code> and <code>% missing</code></li>
-					<li><input type="checkbox"> Visualize missing values (<code>sns.heatmap</code>,
-						<code>missingno.matrix</code>)
-					</li>
-					<li><input type="checkbox"> Determine strategy:</li>
-					<li style="margin-left: 20px;"><input type="checkbox"> Drop rows/columns (if valid)</li>
-					<li style="margin-left: 20px;"><input type="checkbox"> Impute (mean/median/mode/forward fill)</li>
-					<li style="margin-left: 20px;"><input type="checkbox"> Advanced imputation (KNN, MICE, model-based)
-					</li>
-				</ul>
-			</div>
+    <h2>2. Exploratory Data Analysis (EDA)</h2>
+    <p>EDA involves analyzing the dataset to uncover patterns, anomalies, and relationships between variables. This step informs subsequent preprocessing and modeling decisions.</p>
+    
+    <h3>2.1 Data Visualization</h3>
+    <ul>
+        <li><strong>Distributions</strong>: Plot histograms for numerical features to identify skewness or outliers. For categorical variables, use bar charts to visualize class imbalances.</li>
+        <li><strong>Correlations</strong>: Calculate correlation matrices or heatmaps to detect relationships between variables. For example, a high correlation between "age" and "income" might indicate multicollinearity.</li>
+        <li><strong>Missing Values</strong>: Identify columns with missing data using <code>df.isnull().sum()</code> and visualize their distribution with heatmaps.</li>
+    </ul>
+    
+    <h3>2.2 Statistical Analysis</h3>
+    <ul>
+        <li><strong>Summary Statistics</strong>: Compute mean, median, standard deviation, and quartiles for numerical features.</li>
+        <li><strong>Class Imbalance</strong>: For classification tasks, check if target classes are evenly represented. Severe imbalances may require techniques like oversampling or weighted loss functions.</li>
+    </ul>
 
-			<div class="section-header">
-				<span class="toggle-icon">▶</span>
-				<h2><span class="diamond">🔹</span> 5. Univariate Analysis</h2>
-			</div>
-			<div class="section-content section-hidden">
-				<h3>Numerical Features</h3>
-				<ul>
-					<li><input type="checkbox"> Histograms</li>
-					<li><input type="checkbox"> Boxplots</li>
-					<li><input type="checkbox"> Summary stats (<code>df.describe()</code>)</li>
-				</ul>
+    <hr>
 
-				<h3>Categorical Features</h3>
-				<ul>
-					<li><input type="checkbox"> Bar plots / Count plots</li>
-					<li><input type="checkbox"> <code>value_counts()</code> for cardinality & imbalance</li>
-				</ul>
+    <h2>3. Data Cleaning and Preprocessing</h2>
+    <p>Raw data is often messy. Cleaning ensures the dataset is consistent, complete, and suitable for modeling.</p>
+    
+    <h3>3.1 Handling Missing Data</h3>
+    <ul>
+        <li><strong>Deletion</strong>: Remove rows or columns with excessive missing values (e.g., &gt;50% missing). Use <code>df.dropna()</code> cautiously to avoid losing valuable information.</li>
+        <li><strong>Imputation</strong>: Fill missing numerical values with the mean or median. For categorical data, use the mode or a placeholder like "Unknown".</li>
+    </ul>
+    
+    <h3>3.2 Addressing Outliers</h3>
+    <ul>
+        <li><strong>Detection</strong>: Use boxplots or Z-scores to identify outliers. For example, data points beyond 3 standard deviations from the mean are often considered outliers.</li>
+        <li><strong>Treatment</strong>: Cap outliers at threshold values or remove them if they are measurement errors.</li>
+    </ul>
+    
+    <h3>3.3 Encoding Categorical Variables</h3>
+    <ul>
+        <li><strong>Label Encoding</strong>: Convert ordinal categories (e.g., "low," "medium," "high") to numerical labels (0, 1, 2).</li>
+        <li><strong>One-Hot Encoding</strong>: Create binary columns for nominal categories (e.g., "city" becomes "city_NewYork," "city_SF").</li>
+    </ul>
+    
+    <h3>3.4 Feature Scaling</h3>
+    <ul>
+        <li><strong>Normalization</strong>: Rescale numerical features to a range of [0,1] using <code>MinMaxScaler</code>.</li>
+        <li><strong>Standardization</strong>: Transform data to have a mean of 0 and standard deviation of 1 using <code>StandardScaler</code>.</li>
+    </ul>
 
-				<h3>Target Variable</h3>
-				<ul>
-					<li><input type="checkbox"> Distribution (histogram / countplot)</li>
-					<li><input type="checkbox"> Class balance (classification)</li>
-					<li><input type="checkbox"> Range and skewness (regression)</li>
-				</ul>
-			</div>
+    <hr>
 
-			<div class="section-header">
-				<span class="toggle-icon">▶</span>
-				<h2><span class="diamond">🔹</span> 6. Bivariate/Multivariate Analysis</h2>
-			</div>
-			<div class="section-content section-hidden">
-				<ul>
-					<li><input type="checkbox"> Correlation matrix (numerical-numerical)</li>
-					<li><input type="checkbox"> Scatter plots / pairplots</li>
-					<li><input type="checkbox"> Boxplots for category vs. numeric</li>
-					<li><input type="checkbox"> Crosstabs or grouped bar charts (cat-cat)</li>
-					<li><input type="checkbox"> Group-based summary stats (<code>groupby()</code>)</li>
-				</ul>
-			</div>
+    <h2>4. Feature Engineering and Selection</h2>
+    <p>Feature engineering enhances the dataset by creating new variables or selecting the most relevant ones, improving model performance.</p>
+    
+    <h3>4.1 Creating New Features</h3>
+    <ul>
+        <li><strong>Domain Knowledge</strong>: Derive features like "body mass index (BMI)" from "height" and "weight" columns.</li>
+        <li><strong>Temporal Features</strong>: Extract day, month, or year from date columns.</li>
+    </ul>
+    
+    <h3>4.2 Dimensionality Reduction</h3>
+    <ul>
+        <li><strong>Feature Importance</strong>: Use tree-based models (e.g., Random Forest) to rank features by their predictive power.</li>
+        <li><strong>PCA</strong>: Apply Principal Component Analysis to reduce correlated features into orthogonal components.</li>
+    </ul>
 
-			<div class="section-header">
-				<span class="toggle-icon">▶</span>
-				<h2><span class="diamond">🔹</span> 7. Outlier Detection</h2>
-			</div>
-			<div class="section-content section-hidden">
-				<ul>
-					<li><input type="checkbox"> Boxplots for outlier visualization</li>
-					<li><input type="checkbox"> IQR method or Z-score method</li>
-					<li><input type="checkbox"> Decide to:</li>
-					<li style="margin-left: 20px;"><input type="checkbox"> Cap</li>
-					<li style="margin-left: 20px;"><input type="checkbox"> Remove</li>
-					<li style="margin-left: 20px;"><input type="checkbox"> Leave as is</li>
-					<li style="margin-left: 20px;"><input type="checkbox"> Use log/box-cox transformation</li>
-				</ul>
-			</div>
+    <hr>
 
-			<div class="section-header">
-				<span class="toggle-icon">▶</span>
-				<h2><span class="diamond">🔹</span> 8. Feature Engineering</h2>
-			</div>
-			<div class="section-content section-hidden">
-				<ul>
-					<li><input type="checkbox"> Create derived columns (ratios, interactions)</li>
-					<li><input type="checkbox"> Extract date parts (Year, Month, Day)</li>
-					<li><input type="checkbox"> Create bins (e.g., age groups)</li>
-					<li><input type="checkbox"> Group rare categories</li>
-					<li><input type="checkbox"> Aggregate features (grouped means, etc.)</li>
-				</ul>
-			</div>
+    <h2>5. Data Splitting</h2>
+    <p>Divide the dataset into subsets to train, validate, and test the model. A typical split is 70% training, 15% validation, and 15% testing.</p>
+    
+    <pre><code>from sklearn.model_selection import train_test_split
 
-			<div class="section-header">
-				<span class="toggle-icon">▶</span>
-				<h2><span class="diamond">🔹</span> 9. Encoding Categorical Features</h2>
-			</div>
-			<div class="section-content section-hidden">
-				<ul>
-					<li><input type="checkbox"> Label encoding (if ordinal)</li>
-					<li><input type="checkbox"> One-hot encoding (if nominal)</li>
-					<li><input type="checkbox"> Frequency/Count encoding</li>
-					<li><input type="checkbox"> Target/Mean encoding (with care to avoid leakage)</li>
-				</ul>
-			</div>
+# Split into training and temporary sets
+X_train, X_temp, y_train, y_temp = train_test_split(X, y, test_size=0.3, random_state=42)
 
-			<div class="section-header">
-				<span class="toggle-icon">▶</span>
-				<h2><span class="diamond">🔹</span> 10. Data Scaling</h2>
-			</div>
-			<div class="section-content section-hidden">
-				<ul>
-					<li><input type="checkbox"> Normalize or scale numeric features (if needed):</li>
-					<li style="margin-left: 20px;"><input type="checkbox"> StandardScaler (mean = 0, std = 1)</li>
-					<li style="margin-left: 20px;"><input type="checkbox"> MinMaxScaler (0 to 1)</li>
-					<li style="margin-left: 20px;"><input type="checkbox"> RobustScaler (for outliers)</li>
-					<li><input type="checkbox"> Only scale after encoding & splitting (on train/test separately)</li>
-				</ul>
-			</div>
+# Split temporary set into validation and test
+X_val, X_test, y_val, y_test = train_test_split(X_temp, y_temp, test_size=0.5, random_state=42)
+</code></pre>
 
-			<div class="section-header">
-				<span class="toggle-icon">▶</span>
-				<h2><span class="diamond">🔹</span> 11. Feature Selection (Optional Pre-modeling)</h2>
-			</div>
-			<div class="section-content section-hidden">
-				<ul>
-					<li><input type="checkbox"> Drop low-variance features</li>
-					<li><input type="checkbox"> Drop highly correlated features</li>
-					<li><input type="checkbox"> Use mutual information / ANOVA F-test</li>
-					<li><input type="checkbox"> Use RFE / model-based methods (if planning ahead)</li>
-				</ul>
-			</div>
+    <hr>
 
-			<div class="section-header">
-				<span class="toggle-icon">▶</span>
-				<h2><span class="diamond">🔹</span> 12. Visual Reporting</h2>
-			</div>
-			<div class="section-content section-hidden">
-				<ul>
-					<li><input type="checkbox"> Summarize important insights visually</li>
-					<li><input type="checkbox"> Save figures of important plots</li>
-					<li><input type="checkbox"> Optional: use profiling tools: <code>pandas-profiling</code>,
-						<code>SweetViz</code>, <code>D-Tale</code>, <code>Autoviz</code>
-					</li>
-				</ul>
-			</div>
+    <h2>6. Model Selection and Training</h2>
+    
+    <h3>6.1 Choosing an Algorithm</h3>
+    <ul>
+        <li><strong>Baseline Models</strong>: Start with simple models like Linear Regression (regression) or Logistic Regression (classification). These provide benchmarks for comparison.</li>
+        <li><strong>Complex Models</strong>: Progress to Decision Trees, Random Forests, or Gradient Boosting if baseline performance is inadequate.</li>
+    </ul>
+    
+    <h3>6.2 Training the Model</h3>
+    <pre><code>from sklearn.linear_model import LogisticRegression
 
-			<div class="section-header">
-				<span class="toggle-icon">▶</span>
-				<h2><span class="diamond">🔹</span> 13. Documentation & Summary</h2>
-			</div>
-			<div class="section-content section-hidden">
-				<ul>
-					<li><input type="checkbox"> Document key insights from EDA</li>
-					<li><input type="checkbox"> Highlight data quality issues</li>
-					<li><input type="checkbox"> Note feature transformations</li>
-					<li><input type="checkbox"> Make modeling recommendations</li>
-				</ul>
-			</div>
+model = LogisticRegression()
+model.fit(X_train, y_train)
+</code></pre>
+    
+    <h3>6.3 Cross-Validation</h3>
+    <p>Use k-fold cross-validation (e.g., k=5) to assess generalizability:</p>
+    <pre><code>from sklearn.model_selection import cross_val_score
 
-			<div class="section-header">
-				<span class="toggle-icon">▶</span>
-				<h2><span class="diamond">🔹</span> 14. Export Clean Data</h2>
-			</div>
-			<div class="section-content section-hidden">
-				<ul>
-					<li><input type="checkbox"> Save cleaned & transformed dataset (<code>to_csv</code>)</li>
-					<li><input type="checkbox"> Optionally split into train/test before modeling</li>
-				</ul>
-			</div>
-		</div>
-	</div>
+scores = cross_val_score(model, X_train, y_train, cv=5)
+print(f"Mean Accuracy: {scores.mean():.2f}")
+</code></pre>
 
-	<script>
-		document.addEventListener('DOMContentLoaded', function () {
-			const headers = document.querySelectorAll('.section-header');
+    <hr>
 
-			headers.forEach(header => {
-				header.addEventListener('click', function () {
-					const content = this.nextElementSibling;
-					const icon = this.querySelector('.toggle-icon');
+    <h2>7. Model Evaluation</h2>
+    <p>Evaluate performance on the validation set using metrics aligned with the problem type:</p>
+    
+    <h3>7.1 Classification Tasks</h3>
+    <ul>
+        <li><strong>Accuracy</strong>: (Correct Predictions) / (Total Predictions).</li>
+        <li><strong>Precision and Recall</strong>: Precision = TP / (TP + FP), Recall = TP / (TP + FN).</li>
+        <li><strong>ROC-AUC</strong>: Area under the Receiver Operating Characteristic curve.</li>
+    </ul>
+    
+    <h3>7.2 Regression Tasks</h3>
+    <ul>
+        <li><strong>Mean Absolute Error (MAE)</strong>: Average absolute difference between predictions and actual values.</li>
+        <li><strong>R² Score</strong>: Proportion of variance explained by the model.</li>
+    </ul>
 
-					if (content.classList.contains('section-hidden')) {
-						content.classList.remove('section-hidden');
-						content.classList.add('section-visible');
-						icon.classList.add('rotated');
-					} else {
-						content.classList.add('section-hidden');
-						content.classList.remove('section-visible');
-						icon.classList.remove('rotated');
-					}
-				});
-			});
-		});
-	</script>
+    <hr>
+
+    <h2>8. Hyperparameter Tuning</h2>
+    <p>Optimize model settings to improve performance:</p>
+    
+    <h3>8.1 Grid Search</h3>
+    <pre><code>from sklearn.model_selection import GridSearchCV
+
+param_grid = {'C': [0.1, 1, 10], 'penalty': ['l1', 'l2']}
+grid_search = GridSearchCV(LogisticRegression(), param_grid, cv=5)
+grid_search.fit(X_train, y_train)
+
+print(f"Best Parameters: {grid_search.best_params_}")
+</code></pre>
+    
+    <h3>8.2 Random Search</h3>
+    <p>Efficiently explore hyperparameter combinations for complex models.</p>
+
+    <hr>
+
+    <h2>9. Final Evaluation and Deployment</h2>
+    
+    <h3>9.1 Test Set Evaluation</h3>
+    <p>Assess the tuned model on the untouched test set to simulate real-world performance:</p>
+    <pre><code>test_accuracy = model.score(X_test, y_test)
+print(f"Test Accuracy: {test_accuracy:.2f}")
+</code></pre>
+    
+    <h3>9.2 Model Deployment</h3>
+    <ul>
+        <li><strong>API Deployment</strong>: Use Flask or FastAPI to wrap the model in an API for real-time predictions.</li>
+        <li><strong>Monitoring</strong>: Track performance metrics and retrain the model periodically with new data.</li>
+    </ul>
+
+    <hr>
+
+    <h2>10. Documentation and Iteration</h2>
+    <ul>
+        <li><strong>Code Documentation</strong>: Comment your code and maintain a README file explaining the project's purpose, steps, and dependencies.</li>
+        <li><strong>Iterate</strong>: Machine learning is iterative. Revisit earlier steps (e.g., feature engineering, hyperparameters) based on evaluation results.</li>
+    </ul>
+
+    <hr>
+
+    <div class="nav-buttons">
+        <a href="ead Checkpoints.html" class="btn">View EAD Checkpoints</a>
+    </div>
+
+    <div class="divider">⁂</div>
+	<button class="theme-toggle" id="themeToggle">🌓</button>
+    
+    <script src="script.js"></script>
 </body>
-
 </html>
